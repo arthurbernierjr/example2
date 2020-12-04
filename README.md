@@ -28,7 +28,7 @@
 1. `touch server.js`
 1. `npm init -y`
 1. `npm i express express-react-views react react-dom`
-1. Edit package.json to have `"main": "server.js",`
+1. Edit package.json to have `"dev": "nodemon server.js",` inside of the scripts object
 
 ## Start express
 
@@ -159,7 +159,11 @@ Inside server.js:
 
 ```javascript
 const Fruit = require('./models/fruits.js');
+
+
 //... and then farther down the file
+
+
 app.post('/fruits/', (req, res)=>{
     if(req.body.readyToEat === 'on'){ //if checked, req.body.readyToEat is set to 'on'
         req.body.readyToEat = true;
