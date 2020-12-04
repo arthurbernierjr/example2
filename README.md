@@ -20,7 +20,7 @@
 
 # Never Forget
 
-![switch_to_jsx (1)](https://media.git.generalassemb.ly/user/15881/files/4cb02600-92e5-11ea-95c3-4a5765bb3bb9)
+![arthur_node_jsx_diagram_photoshopped](https://media.git.generalassemb.ly/user/15881/files/c2cf4100-2e61-11eb-913c-d8b656fd9709)
 
 ## Initialize a directory
 
@@ -35,11 +35,12 @@
 ```javascript
 const express = require('express');
 const app = express();
+const PORT = 3000;
 
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
     console.log('listening');
 });
 ```
@@ -123,9 +124,10 @@ app.post('/fruits/', (req, res)=>{
 
 ```javascript
 const mongoose = require('mongoose');
+const MONGO_STRING = 'something'
 
 //... and then farther down the file
-mongoose.connect('mongodb://localhost:27017/basiccrud', { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(MONGO_STRING, { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
